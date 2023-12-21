@@ -1,12 +1,6 @@
 import java.time.LocalDate;
 import java.util.List;
 
-// Добавить в класс Animal методы двигаться(toGo), летать(fly), плавать(swim).
-// 2) Создать по два класса наследника Animal, умеющих летать,
-// плавать, бегать(животное может как уметь что-то одно, так и все сразу).
-//3) В main добиться того, чтобы при вызове метода действия,
-// которое конкретное животное не умеет, оно этого не делало
-// (кошки не летают, рыбы не ходят)
 
 public class Animal {
     protected String name;
@@ -15,6 +9,8 @@ public class Animal {
     protected String disease;
     protected String owner;
 
+    protected String type;
+
 
     public Animal(String name, LocalDate birthDate, List<String> vaccinations, String disease, String owner) {
         this.name = name;
@@ -22,6 +18,7 @@ public class Animal {
         this.vaccinations = vaccinations;
         this.disease = disease;
         this.owner = owner;
+        this.type = getClass().getSimpleName();
     }
 
     public String getName() {
@@ -44,6 +41,7 @@ public class Animal {
         return owner;
     }
 
+
     private void wakeUp(){
         System.out.println("Animal woke up");
     }
@@ -56,24 +54,8 @@ public class Animal {
     private void play(){
         System.out.println("Animal is playing");
     }
-    protected void toGo(){
-        System.out.println("Animal is running");
-    }
-    protected void fly(){
-        System.out.println("Animal is flying");
-    }
-    protected void swim(){
-        System.out.println("Animal is swimming");
-    }
-    public void lifeCycle(){
-        wakeUp();
-        play();
-        fly();
-        eat();
-        swim();
-        toGo();
-        sleep();
-    }
+
+
 
     @Override
     public String toString() {

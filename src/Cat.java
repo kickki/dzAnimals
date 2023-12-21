@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Cat extends Animal{
+public class Cat extends Animal implements Goable{
     private int legsCount;
       Cat(String name, LocalDate birthDate, List<String> vaccinations, String disease, String owner, int legsCount){
         super(name, birthDate, vaccinations, disease, owner);
@@ -13,7 +13,8 @@ public class Cat extends Animal{
     }
 
     @Override
-    protected void fly() {
-        System.out.println("This animal can't fly");
+    public double run() {
+        System.out.printf("%s is running", type);
+        return 10.0;
     }
 }
