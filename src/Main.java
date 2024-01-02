@@ -17,7 +17,11 @@ public class Main {
         System.out.println(clinic.getGoable());
         clinic.woundTreatment();
         clinic.diagnose(cat);
-        clinic.giveInjection(cat); //не понимаю почему следующая строка пишется сразу же за этой :(
+        clinic.giveInjection(cat);
         System.out.println("Your animal's pulse is " + clinic.pulseMeasurement(cat));
+        Doctor doc = new Doctor("Peter", "Paramedic",25, 2.5);
+        System.out.println(doc);
+        Nurse nur = new Nurse("Anya", 21, 1.5);
+        System.out.println(nur.name);
     }
 }

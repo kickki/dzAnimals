@@ -2,7 +2,7 @@ import javax.print.Doc;
 import java.time.LocalDate;
 import java.util.*;
 
-public class VeterinaryClinic implements Nurse, Doctor {
+public class VeterinaryClinic implements HelpFromDoctor,HelpFromNurse {
     private List<Animal> patients = new ArrayList<>();
     public void addPatient(Animal animal) {
         patients.add(animal);
@@ -28,7 +28,7 @@ public class VeterinaryClinic implements Nurse, Doctor {
 
     @Override
     public void giveInjection(Animal animal) {
-        System.out.printf("Giving an injection to the %s.", animal.type);
+        System.out.printf("Giving an injection to the %s.%n", animal.type);
     }
 
     @Override
@@ -48,7 +48,9 @@ public class VeterinaryClinic implements Nurse, Doctor {
     @Override
     public void diagnose(Animal animal) {
         System.out.printf("Conducting %s's examination. ", animal.name);
-        System.out.println("Diagnosis is done, take this sheet");
+        System.out.println("Diagnosis is done, take this sheet.");
+
+
     }
 }
 

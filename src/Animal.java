@@ -2,13 +2,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class Animal {
+public class Animal  {
     protected String name;
     protected LocalDate birthDate;
     protected List<String> vaccinations;
     protected String disease;
     protected String owner;
-
     protected String type;
 
 
